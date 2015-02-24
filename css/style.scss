@@ -1,0 +1,341 @@
+---
+---
+
+// SASS MIXINS
+@mixin box-sizing($property) {
+  -webkit-box-sizing: $property;
+     -moz-box-sizing: $property;
+       -o-box-sizing: $property;
+          box-sizing: $property;
+}
+
+$titleColor: #52495C;
+$footnoteColor: #938C9B;
+$mainContentColor: #857A90;
+
+// fonts
+@media screen {
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Regular.ttf) format('truetype');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Regular.ttf) format('truetype');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Source Serif Pro Semibold'), local('SourceSerifPro-Semibold'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Semibold.ttf) format('truetype');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Source Serif Pro Semibold'), local('SourceSerifPro-Semibold'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Semibold.ttf) format('truetype');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Source Serif Pro Bold'), local('SourceSerifPro-Bold'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Bold.ttf) format('truetype');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'Source Serif Pro';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Source Serif Pro Bold'), local('SourceSerifPro-Bold'), url({{ site.baseurl }}/fonts/source_serif_pro/SourceSerifPro-Bold.ttf) format('truetype');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+}
+
+// Style Overides
+@media all {
+    body {
+        margin: 0;
+        padding: 0;
+        border: none;
+
+        width: 100%;
+        height: 100%;
+        background: #E3E3E3;
+        text-align: center;
+
+        overflow-x: hidden;
+
+        font-family:  'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+        font-size: 15px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    h1, h2, h3, h4, h5, h6,
+    li {
+        text-align: left;
+    }
+
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 2em auto;
+        box-shadow: 1px 5px 17px #838383;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.hero {
+    background: url('{{ site.baseurl }}/img/hero.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 20em;
+    @include box-sizing(border-box);
+    text-align: center;
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 0;
+        margin-right: 0.25em;
+    }
+
+    & > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+.navbar {
+    width: 100%;
+    height: 3em;
+    background: #212225;
+    padding: 0;
+    margin: 0;
+
+    li {
+        float: left;
+        height: 100%;
+        line-height: 3em;
+        vertical-align: middle;
+        text-align: center;
+        min-width: 6em;
+        width: auto;
+        color: #5f5f60;
+        text-shadow: 0 0 1px black;
+        @include box-sizing(border-box);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    li:not(:last-child) {
+        border-right: 1px solid #414141;
+    }
+
+    a {
+        color: inherent;
+    }
+}
+
+// specific style posts
+@media screen {
+    .post {
+
+    }
+
+    .post-nav {
+        padding: 2em 8em;
+    }
+}
+
+
+.main-content {
+    margin: 0;
+    border-right: 1px solid #EEE;
+    @include box-sizing(border-box);
+
+    .tags, .archives {
+        padding: 2rem;
+    }
+
+    .post-preview {
+        margin-bottom: 5em;
+        text-align: left;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #EEE;
+        @include box-sizing(border-box);
+        .preview-title {
+            font-weight: 400;
+            color: $titleColor;
+        }
+        .preview-content {
+            font-family: "Source Serif Pro", serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $mainContentColor;
+        }
+    }
+
+    .post-date, .read-more {
+        font-size: 0.75rem;
+        color: $footnoteColor;
+    }
+}
+
+#main {
+    background: white;
+    margin-bottom: 5em;
+    box-shadow: 0 0 10px #A0A0A0;
+}
+
+.aside {
+    margin: 0;
+    padding: 2em;
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    color: #686868;
+    font-variant: small-caps;
+    @include box-sizing(border-box);
+}
+
+.read-more {
+    font-style: italic;
+}
+
+.archives {
+    margin-bottom: 2rem;
+    & > * {
+        padding-left: 1em;
+        font-size: 0.8rem;
+        color: #777;
+    }
+
+}
+.archives-caption {
+    margin: 1rem 0;
+    font-weight: 100;
+}
+
+
+// posts content style
+@media screen {
+    .post {
+        padding: 2rem;
+        border-bottom: 1px solid #eee;
+
+        line-height: 1.8rem;
+        text-align: left;
+
+        blockquote {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            padding-left: 4rem;
+            border-left: 4px solid #DAE5DD;
+        }
+        .highlight {
+            background: #eee;
+            padding: 1px 1rem;
+            margin: 1rem 0;
+            @include box-sizing(border-box);
+        }
+        p {
+            font-family: "Source Serif Pro", serif;
+            color: $mainContentColor;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: 100;
+            color: $titleColor;
+            font-style: normal;
+        }
+        .meta {
+            display: block;
+            text-align: left;
+            font-style: italic;
+            color: $footnoteColor;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 960px) {
+    #wrapper {
+        max-width: 960px;
+        width: 90%;
+        background: white;
+        margin: 0 auto;
+        box-shadow: 0 0 10px #A0A0A0;
+    }
+
+    .main {
+        width: 100%;
+        float: left;
+        .main-content {
+            width: 75%;
+            float: left;
+            border-right: 1px solid #eee;
+            @include box-sizing(border-box);
+        }
+        .sub-content {
+            width: 25%;
+            float: right;
+            padding: 1rem;
+            @include box-sizing(border-box);
+        }
+    }
+}
+
+// small screen
+@media screen and (max-width: 960px) {
+    #wrapper {
+        width: 100%;
+        background: white;
+        margin: 0 auto;
+    }
+
+
+    .posts , .post{
+        padding: 1em;
+    }
+
+    .hero {
+        padding: 2em 1em;
+    }
+}
+
+

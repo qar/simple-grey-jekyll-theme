@@ -1,0 +1,16 @@
+# 博客标题
+name: 我的博客
+
+# 博客地址 例如: http://mysite.com
+url:
+
+# 多说评论框账号 留空表示不使用多说
+duoshuo_shortname:
+
+# Google Analystic Tracking ID
+# 谷歌分析的追踪ID ( Tracking ID ) 留空表示不使用
+google_analystics:
+
+# 针对 Project Pages 服务
+# http://jekyllrb.com/docs/github-pages/#project-page-url-structure
+baseurl: /simple-grey-jekyll-theme
